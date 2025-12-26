@@ -1,4 +1,4 @@
-package ict301.solid.srp;
+package SRP.ApresRefactoring;
 
 // Gère les données du livre
 public class BookSRP {

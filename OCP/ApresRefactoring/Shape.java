@@ -1,4 +1,4 @@
-package ict301.solid.ocp;
+package OCP.ApresRefactoring;
 
 interface Shape {
     double calculateArea();

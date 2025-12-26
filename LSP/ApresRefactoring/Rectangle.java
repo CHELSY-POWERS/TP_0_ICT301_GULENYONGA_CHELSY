@@ -1,3 +1,5 @@
+package LSP.ApresRefactoring;
+
 class Rectangle implements Shape {
     private int width;
     private int height;

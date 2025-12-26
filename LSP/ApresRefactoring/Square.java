@@ -1,3 +1,5 @@
+package LSP.ApresRefactoring;
+
 class Square implements Shape {
     private int side;
 

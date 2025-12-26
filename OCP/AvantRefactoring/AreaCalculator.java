@@ -1,4 +1,4 @@
-package ict301.solid.ocp;
+package OCP.AvantRefactoring;
 
 public class AreaCalculator {
     public double calculateArea(Object shape) {

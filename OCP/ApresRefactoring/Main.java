@@ -1,4 +1,4 @@
-package ict301.solid.ocp;
+package OCP.ApresRefactoring;
 
 public class Main {
     public static void main(String[] args) {

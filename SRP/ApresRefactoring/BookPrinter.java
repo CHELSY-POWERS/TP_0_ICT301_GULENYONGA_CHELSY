@@ -1,5 +1,4 @@
-package ict301.solid.srp;
-
+package SRP.ApresRefactoring;
 // Classe BookPrinter présentation
 class BookPrinter {
 

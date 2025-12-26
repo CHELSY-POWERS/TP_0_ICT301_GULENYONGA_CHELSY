@@ -1,4 +1,4 @@
-package ict301.solid.lsp;
+package LSP.ApresRefactoring;
 
 interface Shape {
     int getArea();
