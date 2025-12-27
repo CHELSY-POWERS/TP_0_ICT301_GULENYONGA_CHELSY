@@ -1,0 +1,127 @@
+
+        #SRP BEFORE
+
+@startuml
+class Book {
+  - title: String
+  - author: String
+  - content: String
+  + getTitle(): String
+  + printToScreen()
+  + saveToDatabase()
+  + emprunter(lecteur: String)
+}
+@enduml
+
+        #SRP AFTER
+@startuml
+class BookSRP {
+  - title: String
+  - author: String
+  + getTitle(): String
+}
+class BookPrinter {
+  + printToScreen(book: BookSRP)
+  + printToHTML(book: BookSRP)
+}
+class BookSaver {
+  + saveToDatabase(book: BookSRP)
+}
+class BookBusinessLogic {
+  + emprunter(book: BookSRP, lecteur: String)
+}
+BookPrinter ..> BookSRP
+BookSaver ..> BookSRP
+BookBusinessLogic ..> BookSRP
+@enduml
+
+        #OCP BEFORE
+
+@startuml
+class AreaCalculator {
+  + calculateArea(shape: Object): double
+}
+AreaCalculator ..> Rectangle
+AreaCalculator ..> Circle
+@enduml
+
+        #OCP AFTER
+
+@startuml
+interface Shape {
+  + calculateArea(): double
+}
+class Rectangle implements Shape
+class Circle implements Shape
+class AreaCalculator2 {
+  + calculateArea(shape: Shape): double
+}
+AreaCalculator2 ..> Shape
+@enduml
+
+        #LSP BEFORE
+
+@startuml
+class Rectangle {
+  + setWidth(w: int)
+  + setHeight(h: int)
+}
+class Square extends Rectangle
+@enduml
+
+        #LSP AFTER
+
+@startuml
+interface Shape {
+  + getArea(): int
+}
+class Rectangle implements Shape
+class Square implements Shape
+@enduml
+
+        #ISP BEFORE
+
+@startuml
+interface Worker {
+  + work()
+  + eat()
+}
+class HumanWorker implements Worker
+class RobotWorker implements Worker
+@enduml
+
+        #ISP AFTER
+
+@startuml
+interface Workable {
+  + work()
+}
+interface Eatable {
+  + eat()
+}
+class HumanWorker implements Workable, Eatable
+class RobotWorker implements Workable
+@enduml
+
+        #DIP BEFORE
+
+@startuml
+class OrderProcessor {
+  - database: MySQLDatabase
+}
+OrderProcessor -> MySQLDatabase
+@enduml
+
+        #DIP AFTER
+
+@startuml
+interface Database {
+  + save(data: String)
+}
+class MySQLDatabase implements Database
+class MongoDBDatabase implements Database
+class OrderProcessor {
+  - database: Database
+}
+OrderProcessor -> Database
+@enduml

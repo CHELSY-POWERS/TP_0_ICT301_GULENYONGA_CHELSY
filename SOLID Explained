@@ -48,3 +48,8 @@ interfaces provides the contract my classes needs to implement.
 High-level modules should not depend on low-level modules; both should depend on abstractions.
 
  I decoupled OrderProcessor from MySQLDatabase. By introducing a Database interface, the OrderProcessor can now work with any database (MySQL, MongoDB, etc.) passed to its constructor.
+
+                                ***************************************************************************************************************
+
+     For the SOLID UML CLASS DIAGRAMS, i installed the the PlantUML plugins here in intelliJ IDEA,
+     after the installation, i created a package, and inside the package i selected UML class, named it *SOLID UML* which permitted me to write the code for each principle Before and after, and it automatically generated the UML diagrams which i saved it as an image.
