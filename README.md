@@ -1,1 +1,52 @@
 # TP_0_ICT301_GULENYONGA_CHELSY
+
+                               TP_0_ICT301_GULENYONGA_CHELSY
+
+
+
+**** Nom : GULENYONGA
+
+**** Prénoms : CHELSY LAPA
+
+**** Matricule : 23U2504
+
+Understanding the SOLID Principles
+The SOLID principles are a set of five design guidelines in object-oriented programming intended to make software designs more understandable, flexible, and maintainable.
+
+*******  1. Single Responsibility Principle (SRP)
+A class should have one, and only one, reason to change. This means a class should only perform one primary task.
+A class should have only a single responsibility, this is to help us reuse fonctionality in a code without having to write or repeat the code several timess in the application.
+single responsibility doesnot mean our class should do only 1 thing , it just mean that, anything it does should be closely related.
+
+ I took a Book class that handled data, printing, and saving. I refactored it by creating BookSRP for data, BookPrinter for display, and BookSaver for persistence.
+
+                              ***************************************************************************************************************
+
+*******  2. Open/Closed Principle (OCP)
+Software entities should be open for extension but closed for modification. You should be able to add new functionality without changing existing code.
+to add additional fonctionalities without  changing existing method or class, use dependency injection or extension method .
+
+ I moved from an AreaCalculator that used if/else checks for specific shapes to a design using a Shape interface. Now, we can add new shapes (like Triangle) without touching the calculator code.
+
+                               ***************************************************************************************************************
+
+*******  3. Liskov Substitution Principle (LSP)
+Objects of a superclass should be replaceable with objects of its subclasses without breaking the application.
+it states that a child class should be able to do everything that a parent class can do.
+
+ I saw that a Square inheriting from Rectangle broke the logic of setters. I refactored this by having both classes implement a common Shape interface independently, ensuring no unexpected side effects.
+
+                               ***************************************************************************************************************
+
+*******  4. Interface Segregation Principle (ISP)
+Clients should not be forced to depend on interfaces they do not use. It is better to have many specific interfaces than one general-purpose interface.
+interfaces provides the contract my classes needs to implement.
+
+ I split a "Fat" Worker interface (which had work and eat) into two separate interfaces: Workable and Eatable. This prevented RobotWorker from being forced to implement an eat method it didn't need.
+
+                               ***************************************************************************************************************
+
+*******  5. Dependency Inversion Principle (DIP)
+High-level modules should not depend on low-level modules; both should depend on abstractions.
+
+ I decoupled OrderProcessor from MySQLDatabase. By introducing a Database interface, the OrderProcessor can now work with any database (MySQL, MongoDB, etc.) passed to its constructor.
